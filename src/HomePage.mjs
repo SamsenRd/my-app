@@ -39,10 +39,10 @@ export default function HomePage(){
             </div>
 
             <div className='search-results'>
+                <h2>Search Results:</h2>
                     {searchResults.map(recipe => {
                         return (
                             <>
-                                <h2>Search Results:</h2>
                                 <div key={recipe.id}></div>
                                 <h3>{recipe.title}</h3>
                                 <img src={recipe.image} alt={recipe.title} />
