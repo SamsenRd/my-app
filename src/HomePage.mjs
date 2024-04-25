@@ -74,3 +74,17 @@ export default function HomePage(){
         </>
     )
 }
+
+// {searchResults.includes(searchQuery)? null : (
+//     "Item doesn't exist...try another item."
+// )}
+
+
+// {searchQuery === '' ? (
+//     clearSearchResults()
+// ) : ( setSearchResults(data.results)
+// )}
+
+// const clearSearchResults = () =>{
+// setSearchResults([])
+// }

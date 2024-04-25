@@ -98,12 +98,15 @@ form{
   text-align: center;
   font-size: 1.1rem;
   width: 250px;
+  color: black;
 }
 
 .recipe-img{
   width: 250px;
+  height: 200px;
   padding: 20px;
 }
+
 
 .reset-btn{
   margin: 30px auto;
