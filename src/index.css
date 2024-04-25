@@ -87,7 +87,11 @@ form{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+
 }
 
 .recipe-title{
@@ -102,7 +106,7 @@ form{
 }
 
 .reset-btn{
-  margin: 10px auto;
+  margin: 30px auto;
   display: block;
   border: none;
   padding: 10px 25px;

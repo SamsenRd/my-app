@@ -32,7 +32,7 @@ export default function HomePage(){
             <div className='homepage-container'>
                 <img src={recipeIconImg} className="recipe-logo" alt="Image of the recipe logo."/>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="search" className="recipe-label">Search ingredient(s) or cuisine for inspiration!</label><br/><br/>
+                    <label htmlFor="search" className="recipe-label">Search ingredient(s) or cuisines for inspiration!</label><br/><br/>
                     <input 
                         type='text' 
                         id="search" 
