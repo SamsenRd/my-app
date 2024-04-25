@@ -84,9 +84,11 @@ form{
 
 .recipe-title{
   text-align: center;
+  font-size: 1.1rem;
+  width: 250px;
 }
 
 .recipe-img{
-  width: 300px;
+  width: 250px;
   padding: 20px;
 }

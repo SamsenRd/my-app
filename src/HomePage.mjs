@@ -13,8 +13,8 @@ export default function HomePage(){
                 throw new Error('Network response was not ok')
             }
             const data = await response.json()
-            console.log(data)
             setSearchResults(data.results)
+            setSearchQuery('')
         } catch(error){
             console.error('Error fetching recipes:', error)
         }
