@@ -4,6 +4,7 @@ import recipeIconImg from "./images/logo-icon.svg"
 export default function HomePage(){
     const [searchQuery, setSearchQuery] = React.useState('')
     const [searchResults, setSearchResults] = React.useState([])
+    const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
         event.preventDefault()
@@ -18,6 +19,12 @@ export default function HomePage(){
         } catch(error){
             console.error('Error fetching recipes:', error)
         }
+    }
+
+    const reset = () => {
+        setResetButton(false)
+        setSearchQuery('')
+        setSearchResults([])
     }
 
     return(
@@ -37,10 +44,15 @@ export default function HomePage(){
                     <input type="submit" value="Submit" className='recipe-submit'/>
                 </form>
             </div>
+
             <hr className='horizontal-line'/>
 
             <div className='search-results'>
-                <h2 className='search-results-title'>Search Results:</h2>
+                {searchResults.length === 0 ? (
+                    <h2 className='search-results-title'>No recipes...yet</h2>
+                ) : (
+                    <h2 className='search-results-title2'>Search results:</h2>
+                )}
                 <div className='recipe-container'> 
                     {searchResults.map(recipe => {
                         return (
@@ -53,6 +65,11 @@ export default function HomePage(){
                         )
                     })}
                 </div>
+            </div>
+            <div>
+                {searchResults.length !== 0 ? (
+                    <button onClick={reset} className='reset-btn'>Reset</button>
+                ) : null}
             </div>
         </>
     )
