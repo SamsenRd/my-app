@@ -1,10 +1,13 @@
 body {
   margin: 0;
-  font-family: "satisfy", cursive, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
+  font-optical-sizing: auto;
   font-style: normal;
   box-sizing: border-box;
-  background-color: #FFD5C1;
+  background-color: #FEFDED;
+  background-repeat: no-repeat;
+  /* background-color: #FFD5C1; */
 }
 
 /*Main Items*/
@@ -32,27 +35,58 @@ form{
   text-align: center;
 }
 .recipe-searchBar{
-  border: none;
+  border: 1px solid #A1C398;
+  border-right: none;
   padding: 10px;
-  width: 100%;
-  border-radius: 5px;
+  width: 50%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color:white;
+  margin-top: 1em;
 
 }
 .recipe-submit{
-  margin-top: 2em;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-family: "satisfy", cursive, sans-serif;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #A1C398;
+  padding: 10px 20px 11.4px;
+  font-size: 0.8rem;
+  font-family: "Raleway", sans-serif;
   cursor: pointer;
-  background-color: #94390D;
-  color: white;
-}
-
-.recipe-submit:hover{
-  background-color: #F9Ca00;
+  background-color: #C6EBC5;
   color: black;
 }
 
+.recipe-submit:hover{
+  background-color: #A1C398;
+  color: black;
+}
 
+.horizontal-line{
+  width: 700px;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+/*Search results*/
+
+.search-results-title{
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.recipe-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.recipe-title{
+  text-align: center;
+}
+
+.recipe-img{
+  width: 300px;
+  padding: 20px;
+}
