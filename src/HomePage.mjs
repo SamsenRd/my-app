@@ -4,6 +4,7 @@ import recipeIconImg from "./images/logo-icon.svg"
 export default function HomePage(){
     const [searchQuery, setSearchQuery] = React.useState('')
     const [searchResults, setSearchResults] = React.useState([])
+    const [errorText, setErrorText] = React.useState('')
     const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
@@ -14,7 +15,19 @@ export default function HomePage(){
                 throw new Error('Network response was not ok')
             }
             const data = await response.json()
-            setSearchResults(data.results)
+            if(searchQuery === ''){
+                setSearchResults([])
+                setErrorText('')
+            }else{
+                setSearchResults(prevSearchResults => {
+                    if(!data.results.map(recipe => recipe.title === searchQuery)){
+                        setErrorText("Item doesn't exist...try another item.")
+                    }else{
+                        setErrorText('')
+                    }
+                    return data.results
+                })
+            }
             setSearchQuery('')
         } catch(error){
             console.error('Error fetching recipes:', error)
@@ -25,7 +38,9 @@ export default function HomePage(){
         setResetButton(false)
         setSearchQuery('')
         setSearchResults([])
+        setErrorText('')
     }
+
 
     return(
         <>
@@ -43,6 +58,7 @@ export default function HomePage(){
                     />
                     <input type="submit" value="Submit" className='recipe-submit'/>
                 </form>
+                {errorText !== '' && <p className='error-message'>{errorText}</p>}
             </div>
 
             <hr className='horizontal-line'/>
