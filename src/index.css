@@ -10,13 +10,40 @@ body {
   /* background-color: #FFD5C1; */
 }
 
+/* Heart Icon*/
+.heart-icon-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+  background-color: #C6EBC5;
+  margin: 20px;
+  width: 120px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #A1C398;
+}
+
+.heart-icon-container:hover{
+  background-color: #A1C398;
+}
+
+.heart-icon{
+  width: 25px;
+}
+
+.favourites-icon{
+  margin-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
 /*Main Items*/
 .homepage-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 7em;
+  margin-top: 3em;
 }
 
 /*Logo*/
@@ -77,8 +104,9 @@ form{
   color: rgb(168, 160, 160);
 }
 
+
 .search-results-title2{
-  text-align: center;
+ text-align: center;
   margin-bottom: 2em;
   color: rgb(0, 0, 0);
 }
@@ -111,11 +139,11 @@ form{
 .reset-btn{
   margin: 30px auto;
   display: block;
-  border: none;
+  border: 2px solid #A1C398;
   padding: 10px 25px;
   border-radius: 5px;
   background-color: #C6EBC5;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }

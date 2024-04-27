@@ -1,5 +1,7 @@
 import React from 'react'
 import recipeIconImg from "./images/logo-icon.svg"
+import heartIcon from "./images/heart-solid.svg"
+
 
 export default function HomePage(){
     const [searchQuery, setSearchQuery] = React.useState('')
@@ -44,6 +46,10 @@ export default function HomePage(){
 
     return(
         <>
+            <button className='heart-icon-container'>
+                <img className="heart-icon" src={heartIcon} alt='heart icon' />
+                <p className='favourites-icon'>Favourites</p>
+            </button>
             <div className='homepage-container'>
                 <img src={recipeIconImg} className="recipe-logo" alt="Image of the recipe logo."/>
                 <form onSubmit={handleSubmit}>
@@ -75,6 +81,7 @@ export default function HomePage(){
                             <>
                                 <div key={recipe.id}>
                                     <h3 className='recipe-title'>{recipe.title}</h3>
+                                    {/* <img src={} alt="" /> */}
                                     <img src={recipe.image} alt={recipe.title} className='recipe-img'/>
                                 </div>
                             </>
@@ -90,17 +97,3 @@ export default function HomePage(){
         </>
     )
 }
-
-// {searchResults.includes(searchQuery)? null : (
-//     "Item doesn't exist...try another item."
-// )}
-
-
-// {searchQuery === '' ? (
-//     clearSearchResults()
-// ) : ( setSearchResults(data.results)
-// )}
-
-// const clearSearchResults = () =>{
-// setSearchResults([])
-// }
