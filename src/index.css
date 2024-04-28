@@ -101,7 +101,7 @@ form{
 .search-results-title{
   text-align: center;
   margin-bottom: 2em;
-  color: rgb(168, 160, 160);
+  color: #a8a0a0;
 }
 
 
@@ -166,4 +166,23 @@ form{
 
 .reset-btn:hover{
   background-color: #A1C398;
+}
+
+/*Favourite Page*/
+
+.favourite-title{
+  text-align: center;
+  font-size: 2rem;
+  color: #A1C398;
+  margin-top: 2em;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #67955c;
+}
+
+.favourite-recipes{
+  color: #a8a0a0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 4em;
 }

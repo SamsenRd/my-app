@@ -2,12 +2,13 @@ import React from 'react'
 import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
 import heartOutline from "./images/heart-outline.svg"
+import Favourites from './Favourites.mjs'
 
 export default function HomePage(){
     const [searchQuery, setSearchQuery] = React.useState('')
     const [searchResults, setSearchResults] = React.useState([])
     const [errorText, setErrorText] = React.useState('')
-    const [isFavourite, setIsFavourite] = React.useState(false)
+    const [isFavourite, setIsFavourite] = React.useState({})
     const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
