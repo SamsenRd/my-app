@@ -122,17 +122,33 @@ form{
 
 }
 
+.title-heart-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .recipe-title{
   text-align: center;
   font-size: 1.1rem;
-  width: 250px;
+  width: 200px;
   color: black;
 }
 
+.heart-icon-button-container{
+  border: none;
+  background-color: #FEFDED;
+}
+
+.heart-icon{
+  width: 25px;
+  cursor: pointer;
+}
+
 .recipe-img{
-  width: 250px;
+  width: 270px;
   height: 200px;
-  padding: 20px;
+  padding: 20px 10px 15px 20px;
 }
 
 

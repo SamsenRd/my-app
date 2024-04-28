@@ -1,12 +1,13 @@
 import React from 'react'
 import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
-
+import heartOutline from "./images/heart-outline.svg"
 
 export default function HomePage(){
     const [searchQuery, setSearchQuery] = React.useState('')
     const [searchResults, setSearchResults] = React.useState([])
     const [errorText, setErrorText] = React.useState('')
+    const [isFavourite, setIsFavourite] = React.useState(false)
     const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
@@ -34,6 +35,13 @@ export default function HomePage(){
         } catch(error){
             console.error('Error fetching recipes:', error)
         }
+    }
+
+    const handleFavourite = (recipeId) => {
+        setIsFavourite(prevIsFavourite => ({
+            ...prevIsFavourite,
+            [recipeId]: !prevIsFavourite[recipeId]
+        }))
     }
 
     const reset = () => {
@@ -80,8 +88,12 @@ export default function HomePage(){
                         return (
                             <>
                                 <div key={recipe.id}>
-                                    <h3 className='recipe-title'>{recipe.title}</h3>
-                                    {/* <img src={} alt="" /> */}
+                                    <div className='title-heart-container'>
+                                        <h3 className='recipe-title'>{recipe.title}</h3>
+                                        <button className="heart-icon-button-container" onClick={() => {handleFavourite(recipe.id)}}>
+                                            <img className="heart-icon" src={isFavourite[recipe.id] ? heartIcon : heartOutline} alt='heart icon' />
+                                        </button>
+                                    </div>
                                     <img src={recipe.image} alt={recipe.title} className='recipe-img'/>
                                 </div>
                             </>
