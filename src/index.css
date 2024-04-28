@@ -10,8 +10,19 @@ body {
   /* background-color: #FFD5C1; */
 }
 
+.link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.link.active {
+  font-weight: bold;
+  color: #FA7070;
+}
+
 /* Heart Icon*/
-.heart-icon-container{
+/* .heart-icon-container{
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -26,17 +37,17 @@ body {
 
 .heart-icon-container:hover{
   background-color: #A1C398;
-}
+} */
 
-.heart-icon{
+/* .heart-icon{
   width: 25px;
-}
+} */
 
-.favourites-icon{
+/* .favourites-icon{
   margin-left: 5px;
   padding-right: 5px;
   font-weight: bold;
-}
+} */
 /*Main Items*/
 .homepage-container{
   display: flex;
@@ -170,11 +181,17 @@ form{
 
 /*Favourite Page*/
 
+.favourites-container{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 2em;
+}
+
 .favourite-title{
-  text-align: center;
   font-size: 2rem;
   color: #A1C398;
-  margin-top: 2em;
+  margin-right: 5px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #67955c;
 }
@@ -185,4 +202,8 @@ form{
   font-size: 1.2rem;
   text-align: center;
   margin-top: 4em;
+}
+
+.favourite-title-heart{
+  width: 25px;
 }

@@ -2,13 +2,9 @@ import React from 'react'
 import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
 import heartOutline from "./images/heart-outline.svg"
-import Favourites from './Favourites.mjs'
 
-export default function HomePage(){
-    const [searchQuery, setSearchQuery] = React.useState('')
-    const [searchResults, setSearchResults] = React.useState([])
+export default function HomePage({searchQuery, setSearchQuery, isFavourite, setIsFavourite, searchResults, setSearchResults}){
     const [errorText, setErrorText] = React.useState('')
-    const [isFavourite, setIsFavourite] = React.useState({})
     const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
@@ -55,10 +51,6 @@ export default function HomePage(){
 
     return(
         <>
-            <button className='heart-icon-container'>
-                <img className="heart-icon" src={heartIcon} alt='heart icon' />
-                <p className='favourites-icon'>Favourites</p>
-            </button>
             <div className='homepage-container'>
                 <img src={recipeIconImg} className="recipe-logo" alt="Image of the recipe logo."/>
                 <form onSubmit={handleSubmit}>

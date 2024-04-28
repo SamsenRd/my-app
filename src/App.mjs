@@ -10,14 +10,15 @@ function Navigation(){
 
     return (
       <nav>
-          <Link to={location.pathname === "/favourites" ? "/" : "/favourites"}>
-            {location.pathname === "/favourites" ? "Home" : "Favourites"}
-          </Link>
+        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>Home</Link>
+        <Link to="/favourites" className={`link ${location.pathname === "/favourites" ? "active" : ""}`}>Favourites</Link>
       </nav>
     )
 }
 
 export default function App() {
+  const [searchQuery, setSearchQuery] = React.useState('')
+  const [searchResults, setSearchResults] = React.useState([])
   const [isFavourite, setIsFavourite] = React.useState([])
   
 
@@ -27,7 +28,12 @@ export default function App() {
         <Navigation />
       </div>
       <Routes>
-        <Route path="/" element={<HomePage isFavourite={isFavourite} setIsFavourite={setIsFavourite}/>} />
+        <Route path="/" element={<HomePage 
+          searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+          searchResults={searchResults} setSearchResults={setSearchResults}
+          isFavourite={isFavourite} setIsFavourite={setIsFavourite}/>
+        } 
+        />
         <Route path="/Favourites" element={<Favourites isFavourite={isFavourite}/>} />
       </Routes>
     </Router>
