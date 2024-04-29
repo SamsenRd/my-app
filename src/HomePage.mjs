@@ -81,7 +81,7 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
                                     <div className='title-heart-container'>
                                         <h3 className='recipe-title'>{recipe.title}</h3>
                                         <button className="heart-icon-button-container" onClick={() => {handleFavourite(recipe.id)}}>
-                                            <img className="heart-icon" src={favoritedRecipes[recipe.id] ? heartIcon : heartOutline} alt='heart icon' />
+                                            <img className="heart-icon" src={favoritedRecipes.includes(recipe.id) ? heartIcon : heartOutline} alt='heart icon' />
                                         </button>
                                     </div>
                                     <img src={recipe.image} alt={recipe.title} className='recipe-img'/>

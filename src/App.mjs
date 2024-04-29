@@ -38,10 +38,10 @@ export default function App() {
         <Route path="/" element={<HomePage 
           searchQuery={searchQuery} setSearchQuery={setSearchQuery}
           searchResults={searchResults} setSearchResults={setSearchResults}
-          favoritedRecipes={favoritedRecipes} toggleFavorite={toggleFavorite}/>
+          favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} toggleFavorite={toggleFavorite}/>
         } 
         />
-        <Route path="/Favourites" element={<Favourites favoritedRecipes={favoritedRecipes}/>} />
+        <Route path="/Favourites" element={<Favourites favoritedRecipes={favoritedRecipes} searchResults={searchResults}/>} />
       </Routes>
     </Router>
     
