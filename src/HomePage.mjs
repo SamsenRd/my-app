@@ -3,7 +3,7 @@ import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
 import heartOutline from "./images/heart-outline.svg"
 
-export default function HomePage({searchQuery, setSearchQuery, isFavourite, setIsFavourite, searchResults, setSearchResults}){
+export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, toggleFavorite}){
     const [errorText, setErrorText] = React.useState('')
     const [resetButton, setResetButton] = React.useState(false)
 
@@ -35,10 +35,7 @@ export default function HomePage({searchQuery, setSearchQuery, isFavourite, setI
     }
 
     const handleFavourite = (recipeId) => {
-        setIsFavourite(prevIsFavourite => ({
-            ...prevIsFavourite,
-            [recipeId]: !prevIsFavourite[recipeId]
-        }))
+        toggleFavorite(recipeId)
     }
 
     const reset = () => {
@@ -84,7 +81,7 @@ export default function HomePage({searchQuery, setSearchQuery, isFavourite, setI
                                     <div className='title-heart-container'>
                                         <h3 className='recipe-title'>{recipe.title}</h3>
                                         <button className="heart-icon-button-container" onClick={() => {handleFavourite(recipe.id)}}>
-                                            <img className="heart-icon" src={isFavourite[recipe.id] ? heartIcon : heartOutline} alt='heart icon' />
+                                            <img className="heart-icon" src={favoritedRecipes[recipe.id] ? heartIcon : heartOutline} alt='heart icon' />
                                         </button>
                                     </div>
                                     <img src={recipe.image} alt={recipe.title} className='recipe-img'/>

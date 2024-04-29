@@ -1,6 +1,5 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import {  } from "react-router-dom"
 import HomePage from './HomePage.mjs';
 import Favourites from './Favourites.mjs';
 
@@ -19,7 +18,15 @@ function Navigation(){
 export default function App() {
   const [searchQuery, setSearchQuery] = React.useState('')
   const [searchResults, setSearchResults] = React.useState([])
-  const [isFavourite, setIsFavourite] = React.useState([])
+  const [favoritedRecipes, setFavoritedRecipes] = React.useState([])
+
+  const toggleFavorite  = (recipeId) => {
+    if (favoritedRecipes.includes(recipeId)){
+      setFavoritedRecipes(favoritedRecipes.filter(id => id !== recipeId))
+    }else{
+      setFavoritedRecipes([...favoritedRecipes, recipeId])
+    }
+  }
   
 
   return (
@@ -31,10 +38,10 @@ export default function App() {
         <Route path="/" element={<HomePage 
           searchQuery={searchQuery} setSearchQuery={setSearchQuery}
           searchResults={searchResults} setSearchResults={setSearchResults}
-          isFavourite={isFavourite} setIsFavourite={setIsFavourite}/>
+          favoritedRecipes={favoritedRecipes} toggleFavorite={toggleFavorite}/>
         } 
         />
-        <Route path="/Favourites" element={<Favourites isFavourite={isFavourite}/>} />
+        <Route path="/Favourites" element={<Favourites favoritedRecipes={favoritedRecipes}/>} />
       </Routes>
     </Router>
     
