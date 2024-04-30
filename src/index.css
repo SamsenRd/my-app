@@ -201,10 +201,53 @@ form{
 
 /*Small devices (phones, 576px and up)*/
 @media (max-width: 576px) {
-  .homepage-container{
-    text-align: center;
-  }
   .horizontal-line{
       width: 120px;
+  }
+  .homepage-container {
+    margin-top: 1em;
+  }
+  
+  .recipe-searchBar {
+    width: 80%; /* Make the search bar wider for better usability */
+    margin-top: 0.5em;
+  }
+  
+  .recipe-submit {
+    font-size: 1rem; /* Increase font size of the submit button */
+  }
+
+  .recipe-title {
+    font-size: 1rem; /* Adjust font size of recipe titles */
+    width: 150px; /* Reduce width of recipe titles */
+  }
+
+  .recipe-img {
+    width: 200px; /* Reduce size of recipe images */
+    height: auto; /* Maintain aspect ratio */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .reset-btn {
+    margin: 20px auto; /* Adjust margin for the reset button */
+    font-size: 0.9rem; /* Adjust font size */
+    padding: 8px 12px; /* Adjust padding */
+  }
+
+  .favourites-container {
+    margin-top: 1em; /* Adjust margin for the favourites container */
+  }
+
+  .favourite-title {
+    font-size: 1.5rem; /* Adjust font size of the favourite title */
+  }
+
+  .favourite-recipes {
+    font-size: 1rem; /* Adjust font size of the favourite recipes text */
+    margin-top: 2em; /* Adjust margin */
+  }
+
+  .saved-recipe-container {
+    padding: 10px; /* Adjust padding for saved recipe container */
   }
 }
