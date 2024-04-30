@@ -10,8 +10,10 @@ function Navigation(){
 
     return (
       <nav>
-        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>Home</Link>
-        <Link to="/favourites" className={`link ${location.pathname === "/favourites" ? "active" : ""}`}>Favourites</Link>
+        <div className="link-styles">
+          <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>Home</Link>
+          <Link to="/favourites" className={`link ${location.pathname === "/favourites" ? "active" : ""}`}>Favourites</Link>
+        </div>
       </nav>
     )
 }

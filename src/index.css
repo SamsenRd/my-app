@@ -10,6 +10,11 @@ body {
   /* background-color: #FFD5C1; */
 }
 
+.link-styles{
+  margin: 20px;
+  font-size: 1.2rem;
+}
+
 .link {
   margin-right: 20px;
   text-decoration: none;
@@ -21,33 +26,6 @@ body {
   color: #FA7070;
 }
 
-/* Heart Icon*/
-/* .heart-icon-container{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 5px;
-  background-color: #C6EBC5;
-  margin: 20px;
-  width: 120px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid #A1C398;
-}
-
-.heart-icon-container:hover{
-  background-color: #A1C398;
-} */
-
-/* .heart-icon{
-  width: 25px;
-} */
-
-/* .favourites-icon{
-  margin-left: 5px;
-  padding-right: 5px;
-  font-weight: bold;
-} */
 /*Main Items*/
 .homepage-container{
   display: flex;
@@ -214,4 +192,19 @@ form{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+  }
+
+/*Small devices (phones, 576px and up)*/
+@media (max-width: 576px) {
+  .homepage-container{
+    text-align: center;
+  }
+  .horizontal-line{
+      width: 120px;
+  }
 }
