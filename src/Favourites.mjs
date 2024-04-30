@@ -10,13 +10,13 @@ export default function Favourites({ favoritedRecipes, setFavoritedRecipes, sear
             isFavorited: favoritedRecipes.includes(recipe.id)
         }))
         setSearchResults(updatedSearchResults)
-    }, [favoritedRecipes]);
+    }, [favoritedRecipes, searchResults, setSearchResults]);
         
     return(
         <>
             <div className="favourites-container">
                 <h2 className="favourite-title">Favourite Recipes </h2>
-                <img className="favourite-title-heart" src={SolidHeart} />
+                <img className="favourite-title-heart" src={SolidHeart} alt="heart icon"/>
             </div>
             <div>
                 {favoritedRecipes.length === 0 ? (

@@ -3,9 +3,8 @@ import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
 import heartOutline from "./images/heart-outline.svg"
 
-export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, setFavoritedRecipes,  toggleFavorite, onSearch}){
+export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, setFavoritedRecipes,toggleFavorite, onSearch}){
     const [errorText, setErrorText] = React.useState('')
-    const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
         event.preventDefault()
@@ -39,8 +38,7 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
         toggleFavorite(recipeId)
     }
 
-    const reset = () => {
-        setResetButton(false)
+    const reset  = () => {
         setSearchQuery('')
         setSearchResults([])
         setErrorText('')
@@ -51,7 +49,7 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
     return(
         <>
             <div className='homepage-container'>
-                <img src={recipeIconImg} className="recipe-logo" alt="Image of the recipe logo."/>
+                <img src={recipeIconImg} className="recipe-logo" alt="Recipe logo."/>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="search" className="recipe-label">Search ingredient(s) or cuisines for inspiration!</label><br/><br/>
                     <input 
@@ -77,7 +75,6 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
                 )}
                 <div className='recipe-container'> 
                     {searchResults.map(recipe => {
-                        const isFavorited = favoritedRecipes.includes(recipe.id);
                         return (
                             <>
                                 <div key={recipe.id}>
