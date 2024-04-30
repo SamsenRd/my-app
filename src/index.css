@@ -103,8 +103,8 @@ form{
 
 .horizontal-line{
   width: 700px;
-  margin-top: 4em;
-  margin-bottom: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 /*Search results*/
@@ -165,18 +165,19 @@ form{
 
 .reset-btn{
   margin: 30px auto;
+  margin-bottom: 0;
   display: block;
-  border: 2px solid #A1C398;
-  padding: 10px 25px;
+  border: 2px solid #FA7070;
+  padding: 10px 15px;
   border-radius: 5px;
-  background-color: #C6EBC5;
-  font-size: 1rem;
+  background-color: #FEFDED;
+  font-size: 0.8rem;
   font-weight: bold;
   cursor: pointer;
 }
 
 .reset-btn:hover{
-  background-color: #A1C398;
+  background-color: #dff0de;
 }
 
 /*Favourite Page*/

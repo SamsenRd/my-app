@@ -28,7 +28,6 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
                     return data.results
                 })
             }
-            setSearchQuery('')
         } catch(error){
             console.error('Error fetching recipes:', error)
         }
@@ -59,9 +58,14 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
                         className='recipe-searchBar'
                         value={searchQuery}   
                         onChange={(event) => setSearchQuery(event.target.value) } 
+                        
                     />
-                    <input type="submit" value="Submit" className='recipe-submit'/>
+                    <input type="submit" value="Search" className='recipe-submit'/>
                 </form>
+                {searchResults.length !== 0 ? (
+                    <button onClick={reset} className='reset-btn'>Clear</button>
+                    ) : null
+                }
                 {errorText !== '' && <p className='error-message'>{errorText}</p>}
             </div>
 
@@ -90,11 +94,6 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
                         )
                     })}
                 </div>
-            </div>
-            <div>
-                {searchResults.length !== 0 ? (
-                    <button onClick={reset} className='reset-btn'>Reset</button>
-                ) : null}
             </div>
         </>
     )
