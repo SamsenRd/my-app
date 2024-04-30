@@ -1,6 +1,4 @@
 import React, {useEffect} from "react"
-import App from "./App.mjs"
-import HomePage from "./HomePage.mjs"
 import SolidHeart from "./images/heart-solid.svg"
 
 export default function Favourites({ favoritedRecipes, setFavoritedRecipes, searchResults, setSearchResults, toggleFavorite}){
