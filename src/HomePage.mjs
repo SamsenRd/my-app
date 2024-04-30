@@ -3,12 +3,13 @@ import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
 import heartOutline from "./images/heart-outline.svg"
 
-export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, toggleFavorite}){
+export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, toggleFavorite, onSearch}){
     const [errorText, setErrorText] = React.useState('')
     const [resetButton, setResetButton] = React.useState(false)
 
     const handleSubmit = async(event) => {
         event.preventDefault()
+        onSearch()
         try{
             const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=c28b8fdf4c28497c8a79d15f3f67381d&query=${searchQuery}`)
             if(!response.ok){

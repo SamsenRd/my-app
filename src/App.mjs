@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
+import SearchLimitExceededPage from "./SearchLimitExceededPage.mjs";
 import HomePage from './HomePage.mjs';
 import Favourites from './Favourites.mjs';
 
@@ -19,6 +20,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = React.useState('')
   const [searchResults, setSearchResults] = React.useState([])
   const [favoritedRecipes, setFavoritedRecipes] = React.useState([])
+  const [searchCount, setSearchCount] = React.useState(0)
 
   useEffect(()=>{
     const storedFavorites = localStorage.getItem('favoritedRecipes')
@@ -39,6 +41,13 @@ export default function App() {
       setFavoritedRecipes([...favoritedRecipes, recipeId])
     }
   }
+
+  const handleSearch= () => {
+    if(searchCount >= 150){
+      return <Navigate to="/SearchLimitExceededPage" />
+    }
+    setSearchCount(prevSearchCount => prevSearchCount + 1)
+  }
   
 
   return (
@@ -50,11 +59,13 @@ export default function App() {
         <Route path="/" element={<HomePage 
           searchQuery={searchQuery} setSearchQuery={setSearchQuery}
           searchResults={searchResults} setSearchResults={setSearchResults}
-          favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} toggleFavorite={toggleFavorite}/>
-        } 
+          favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} toggleFavorite={toggleFavorite} onSearch={handleSearch}/>} 
         />
         <Route path="/Favourites" element={<Favourites favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} 
-          searchResults={searchResults} setSearchResults={setSearchResults} toggleFavorite={toggleFavorite}/>} />
+          searchResults={searchResults} setSearchResults={setSearchResults} toggleFavorite={toggleFavorite}/>} 
+          />
+        <Route path="/SearchLimitExceededPage" element={<SearchLimitExceededPage />}
+        />
       </Routes>
     </Router>
     
