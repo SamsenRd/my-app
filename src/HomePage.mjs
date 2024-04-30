@@ -3,7 +3,7 @@ import recipeIconImg from "./images/logo-icon.svg"
 import heartIcon from "./images/heart-solid.svg"
 import heartOutline from "./images/heart-outline.svg"
 
-export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, toggleFavorite, onSearch}){
+export default function HomePage({searchQuery, setSearchQuery, searchResults, setSearchResults, favoritedRecipes, setFavoritedRecipes,  toggleFavorite, onSearch}){
     const [errorText, setErrorText] = React.useState('')
     const [resetButton, setResetButton] = React.useState(false)
 
@@ -44,6 +44,7 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
         setSearchQuery('')
         setSearchResults([])
         setErrorText('')
+        setFavoritedRecipes([])
     }
 
 
