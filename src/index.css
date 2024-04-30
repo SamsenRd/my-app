@@ -209,12 +209,13 @@ form{
   }
   
   .recipe-searchBar {
-    width: 80%; 
+    width: 70%; 
     margin-top: 0.5em;
   }
   
   .recipe-submit {
     font-size: 1rem; 
+    padding: 7px 20px 10px;
   }
 
   .recipe-title {
@@ -239,11 +240,11 @@ form{
   }
 
   .favourite-title {
-    font-size: 1.5rem; 
+    font-size: 2rem; 
   }
 
   .favourite-recipes {
-    font-size: 1rem; 
+    font-size: 1.2rem; 
     margin-top: 2em;
   }
 
