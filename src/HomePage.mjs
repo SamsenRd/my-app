@@ -75,6 +75,7 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
                 )}
                 <div className='recipe-container'> 
                     {searchResults.map(recipe => {
+                        const isFavorited = favoritedRecipes.includes(recipe.id);
                         return (
                             <>
                                 <div key={recipe.id}>
@@ -99,3 +100,5 @@ export default function HomePage({searchQuery, setSearchQuery, searchResults, se
         </>
     )
 }
+
+

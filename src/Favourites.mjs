@@ -3,19 +3,17 @@ import App from "./App.mjs"
 import HomePage from "./HomePage.mjs"
 import SolidHeart from "./images/heart-solid.svg"
 
-export default function Favourites({ favoritedRecipes, setFavoritedRecipes, searchResults }){
-    useEffect(() => {
-        const storedFavorites = localStorage.getItem('favoritedRecipes');
-        if (storedFavorites) {
-          setFavoritedRecipes(JSON.parse(storedFavorites));
-        }
-      }, []);
-
-      useEffect(() => {
-        localStorage.setItem('favoritedRecipes', JSON.stringify(favoritedRecipes));
-      }, [favoritedRecipes]);
+export default function Favourites({ favoritedRecipes, setFavoritedRecipes, searchResults, setSearchResults, toggleFavorite}){
     
-
+    useEffect(() => {
+        localStorage.setItem('favoritedRecipes', JSON.stringify(favoritedRecipes))
+        const updatedSearchResults = searchResults.map(recipe => ({
+            ...recipe,
+            isFavorited: favoritedRecipes.includes(recipe.id)
+        }))
+        setSearchResults(updatedSearchResults)
+    }, [favoritedRecipes]);
+        
     return(
         <>
             <div className="favourites-container">
@@ -32,8 +30,10 @@ export default function Favourites({ favoritedRecipes, setFavoritedRecipes, sear
                         if (recipe) {
                             return (
                             <div key={recipe.id}>
-                                <h3>{recipe.title}</h3>
-                                <img src={recipe.image} alt={recipe.title} />
+                                <div className="saved-recipe-container">
+                                    <h3 className="saved-recipe-title">{recipe.title}</h3>
+                                    <img className="saved-recipe-img" src={recipe.image} alt={recipe.title} />
+                                </div>
                             </div>
                             );
                         }

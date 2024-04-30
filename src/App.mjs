@@ -30,6 +30,7 @@ export default function App() {
   useEffect(() =>{
     localStorage.setItem('favoritedRecipes', JSON.stringify(favoritedRecipes))
   }, [favoritedRecipes])
+  
 
   const toggleFavorite  = (recipeId) => {
     if (favoritedRecipes.includes(recipeId)){
@@ -52,7 +53,8 @@ export default function App() {
           favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} toggleFavorite={toggleFavorite}/>
         } 
         />
-        <Route path="/Favourites" element={<Favourites favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} searchResults={searchResults}/>} />
+        <Route path="/Favourites" element={<Favourites favoritedRecipes={favoritedRecipes} setFavoritedRecipes={setFavoritedRecipes} 
+          searchResults={searchResults} setSearchResults={setSearchResults} toggleFavorite={toggleFavorite}/>} />
       </Routes>
     </Router>
     
