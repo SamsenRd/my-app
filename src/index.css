@@ -140,8 +140,6 @@ form{
   border: 2px solid #A1C398;
   border-radius: 5px;
   margin-right: 10px;
-  
-
 }
 
 
@@ -198,10 +196,6 @@ form{
   align-items: center;
 }
 
-/*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-
-  }
 
 /*Small devices (phones, 576px and up)*/
 @media (max-width: 576px) {
@@ -230,7 +224,7 @@ form{
   .recipe-img {
     width: 200px;
     height: auto; 
-    padding: 10px; 
+    /* padding: 10px;  */
   }
 
   .reset-btn {
